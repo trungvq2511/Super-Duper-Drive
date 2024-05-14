@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <link media="all" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css">
+
+    <title>Result</title>
+</head>
+<body class="p-3 mb-2 bg-light text-black">
+<div class="container justify-content-center w-50 p-3" style="margin-top: 5em;">
+    <div class="alert alert-success fill-parent" th:unless="${resultMessage}">
+        <h1 class="display-5" id="success-messagee">Success</h1>
+        <span>Your changes were successfully saved. Click <a id="success-continue-link" href="/home">here</a> to
+            continue
+            .</span>
+    </div>
+    <div class="alert alert-danger fill-parent" th:if="${resultMessage}">
+        <h1 class="display-5"id="fail-messagee">Error</h1>
+        <span th:text="${resultMessage}"></span>
+        <span>Click <a id="fail-continue-link" href="/home">here</a> to continue.</span>
+    </div>
+</div>
+</body>
+</html>
